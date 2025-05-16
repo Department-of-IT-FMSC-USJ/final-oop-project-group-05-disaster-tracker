@@ -1,4 +1,18 @@
-/*Alert Table*/
+CREATE TABLE users (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  role ENUM('GN', 'DMC', 'volunteer') NOT NULL,
+  status ENUM('active', 'inactive') NOT NULL DEFAULT 'active',
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE INDEX unique_username (username),
+  UNIQUE INDEX unique_email (email)
+);
+
+
 CREATE TABLE alerts (
   alert_id INT(11) NOT NULL AUTO_INCREMENT,
   alert_type VARCHAR(50) NOT NULL,
@@ -8,4 +22,66 @@ CREATE TABLE alerts (
   date_time DATETIME NOT NULL,
   status ENUM('Ongoing', 'Resolved') NOT NULL DEFAULT 'Ongoing',
   PRIMARY KEY (alert_id)
+);
+
+CREATE TABLE symptoms (
+  report_id INT(11) NOT NULL AUTO_INCREMENT,
+  date_time DATETIME NOT NULL,
+  reporter_name VARCHAR(100) NOT NULL,
+  contact_no VARCHAR(20) NOT NULL,
+  district VARCHAR(100) NOT NULL,
+  gn_division VARCHAR(100) NOT NULL,
+  description TEXT NOT NULL,
+  image VARCHAR(255) NULL,
+  action TEXT NULL,
+  PRIMARY KEY (report_id)
+);
+
+CREATE TABLE volunteer (
+  volunteer_id INT(11) NOT NULL AUTO_INCREMENT,
+  user_id INT(11) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  district VARCHAR(100) NOT NULL,
+  gn_division VARCHAR(100) NOT NULL,
+  availability ENUM('Available', 'Unavailable') NOT NULL,
+  PRIMARY KEY (volunteer_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE contributions (
+  contribution_id INT(11) NOT NULL AUTO_INCREMENT,
+  volunteer_id INT(11) NOT NULL,
+  district VARCHAR(100) NOT NULL,
+  type_support VARCHAR(100) NOT NULL,
+  description TEXT NOT NULL,
+  PRIMARY KEY (contribution_id),
+  FOREIGN KEY (volunteer_id) REFERENCES volunteer(volunteer_id) ON DELETE CASCADE
+);
+
+CREATE TABLE gn_officers (
+  gn_id INT(11) NOT NULL AUTO_INCREMENT,
+  user_id INT(11) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  contact_no VARCHAR(20) NOT NULL,
+  district VARCHAR(100) NOT NULL,
+  gn_division VARCHAR(100) NOT NULL,
+  PRIMARY KEY (gn_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE aid_requests (
+  aid_id INT(11) NOT NULL AUTO_INCREMENT,
+  date_time DATETIME NOT NULL,
+  full_name VARCHAR(100) NOT NULL,
+  contact_no VARCHAR(20) NOT NULL,
+  district VARCHAR(100) NOT NULL,
+  gn_division VARCHAR(100) NOT NULL,
+  type_support VARCHAR(100) NOT NULL,
+  family_size INT(11) NOT NULL,
+  description TEXT NOT NULL,
+  gn_approve ENUM('Pending', 'Approved', 'Rejected') NOT NULL DEFAULT 'Pending',
+  dmc_approve ENUM('Pending', 'Approved', 'Rejected') NOT NULL DEFAULT 'Pending',
+  assign_gn INT(11) NULL,
+  PRIMARY KEY (aid_id),
+  FOREIGN KEY (assign_gn) REFERENCES gn_officers(gn_id) ON DELETE SET NULL
 );
