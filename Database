@@ -1,0 +1,11 @@
+/*Alert Table*/
+CREATE TABLE alerts (
+  alert_id INT(11) NOT NULL AUTO_INCREMENT,
+  alert_type VARCHAR(50) NOT NULL,
+  district VARCHAR(100) NOT NULL,
+  gn_division VARCHAR(100) NOT NULL,
+  severity ENUM('Low', 'Medium', 'High') NOT NULL,
+  date_time DATETIME NOT NULL,
+  status ENUM('Ongoing', 'Resolved') NOT NULL DEFAULT 'Ongoing',
+  PRIMARY KEY (alert_id)
+);
