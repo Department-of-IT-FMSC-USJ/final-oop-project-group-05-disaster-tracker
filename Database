@@ -33,14 +33,18 @@ CREATE TABLE symptoms (
   gn_division VARCHAR(100) NOT NULL,
   description TEXT NOT NULL,
   image VARCHAR(255),
-  action TEXT,
-  PRIMARY KEY (report_id)
+  gn_approval ENUM('Pending', 'Accepted', 'Declined') NOT NULL DEFAULT 'Pending',
+  approved_by_gn INT DEFAULT NULL,
+  PRIMARY KEY (report_id),
+  FOREIGN KEY (approved_by_gn) REFERENCES gn_officers(gn_id) ON DELETE SET NULL
 );
 
 CREATE TABLE volunteer (
   volunteer_id INT NOT NULL AUTO_INCREMENT,
   user_id INT NOT NULL,
   name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  contact_no VARCHAR(20) NOT NULL,
   district VARCHAR(100) NOT NULL,
   gn_division VARCHAR(100) NOT NULL,
   availability ENUM('Available', 'Unavailable') NOT NULL,
