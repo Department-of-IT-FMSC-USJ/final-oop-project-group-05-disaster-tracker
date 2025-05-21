@@ -21,6 +21,7 @@ CREATE TABLE alerts (
   severity ENUM('Low', 'Medium', 'High') NOT NULL,
   date_time DATETIME NOT NULL,
   status ENUM('Ongoing', 'Resolved') NOT NULL DEFAULT 'Ongoing',
+  status_update ENUM('Pending', 'Done') NOT NULL DEFAULT 'Pending',
   PRIMARY KEY (alert_id)
 );
 
@@ -86,6 +87,7 @@ CREATE TABLE aid_requests (
   gn_approve ENUM('Pending', 'Approved', 'Rejected') NOT NULL DEFAULT 'Pending',
   dmc_approve ENUM('Pending', 'Approved', 'Rejected') NOT NULL DEFAULT 'Pending',
   assign_gn INT DEFAULT NULL,
+  completion_status ENUM('Not Completed', 'Completed') NOT NULL DEFAULT 'Not Completed',
   PRIMARY KEY (aid_id),
   FOREIGN KEY (assign_gn) REFERENCES gn_officers(gn_id) ON DELETE SET NULL
 );
