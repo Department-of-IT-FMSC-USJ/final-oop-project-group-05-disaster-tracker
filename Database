@@ -2,13 +2,10 @@ CREATE database disaster_management;
 
 CREATE TABLE users (
   user_id INT NOT NULL AUTO_INCREMENT,
-  username VARCHAR(50) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL,
   email VARCHAR(100) NOT NULL UNIQUE,
   role ENUM('GN', 'DMC', 'volunteer') NOT NULL,
   status ENUM('active', 'inactive') NOT NULL DEFAULT 'active',
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (user_id)
 );
 
@@ -85,3 +82,116 @@ CREATE TABLE aid_requests (
   PRIMARY KEY (aid_id),
   FOREIGN KEY (assign_gn) REFERENCES gn_officers(gn_id) ON DELETE SET NULL
 );
+
+
+-- Insert GN Login Info 
+INSERT INTO users (user_id, password, email, role, status) VALUES (1, 'GN@7535', 'kamal.perera@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (2, 'GN@4422', 'nadeesha.fernando@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (3, 'GN@9503', 'saman.kumara@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (4, 'GN@2733', 'anura.jayasinghe@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (5, 'GN@7924', 'iresha.madushani@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (6, 'GN@8207', 'ruwan.wijesinghe@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (7, 'GN@6841', 'sanduni.rajapaksha@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (8, 'GN@8756', 'thilina.abeywickrama@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (9, 'GN@5125', 'chamari.senanayake@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (10, 'GN@7429', 'dinesh.bandara@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (11, 'GN@7408', 'nimali.ratnayake@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (12, 'GN@3756', 'upul.rathnayake@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (13, 'GN@1723', 'dilani.silva@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (14, 'GN@6925', 'mahesh.nimal@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (15, 'GN@7539', 'shehani.dilhani@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (16, 'GN@7712', 'roshan.perera@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (17, 'GN@3948', 'harsha.jayalath@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (18, 'GN@3747', 'isuru.lakshan@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (19, 'GN@9292', 'bimali.karunaratne@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (20, 'GN@6144', 'kavindu.sampath@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (21, 'GN@4400', 'pubudu.perera@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (22, 'GN@3388', 'nirosha.udayangani@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (23, 'GN@7449', 'asanka.jayawardena@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (24, 'GN@3386', 'lahiru.ranasinghe@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (25, 'GN@5066', 'madushani.kumuduni@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (26, 'GN@5328', 'tharindu.gunasekara@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (27, 'GN@9170', 'lasanthi.wickramasinghe@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (28, 'GN@3472', 'manjula.herath@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (29, 'GN@1449', 'supun.jayarathna@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (30, 'GN@7765', 'shanika.priyadarshani@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (31, 'GN@1282', 'chandima.gunawardena@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (32, 'GN@6889', 'surangi.nisansala@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (33, 'GN@1844', 'ashen.maduranga@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (34, 'GN@7373', 'yasas.abeykoon@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (35, 'GN@2726', 'chathurika.senarath@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (36, 'GN@9290', 'nilantha.wickrama@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (37, 'GN@5950', 'indika.sampath@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (38, 'GN@2629', 'hiruni.hettiarachchi@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (39, 'GN@1718', 'navodhani.mendis@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (40, 'GN@1549', 'janith.liyanage@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (41, 'GN@3990', 'naduni.silva@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (42, 'GN@9919', 'manoj.perera@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (43, 'GN@1969', 'rashmi.karunarathne@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (44, 'GN@6382', 'eranga.weerasinghe@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (45, 'GN@4399', 'thushara.dissanayake@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (46, 'GN@6059', 'dinusha.senanayaka@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (47, 'GN@4997', 'kelum.rathnayake@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (48, 'GN@8943', 'thisari.jayasinghe@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (49, 'GN@4760', 'kasun.rukshan@dms.gov.lk', 'GN', 'active');
+INSERT INTO users (user_id, password, email, role, status) VALUES (50, 'GN@3108', 'kavindi.ekanayake@dms.gov.lk', 'GN', 'active');
+
+-- Insert GN Officers
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (1, 1, 'Kamal Perera', '0759603020', 'Colombo', 'Nugegoda');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (2, 2, 'Nadeesha Fernando', '0712955515', 'Colombo', 'Malabe West');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (3, 3, 'Saman Kumara', '0762678746', 'Gampaha', 'Ragama');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (4, 4, 'Anura Jayasinghe', '0742845513', 'Gampaha', 'Kelaniya');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (5, 5, 'Iresha Madushani', '0721250742', 'Kalutara', 'Panadura North');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (6, 6, 'Ruwan Wijesinghe', '0755225937', 'Kalutara', 'Beruwala Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (7, 7, 'Sanduni Rajapaksha', '0738972447', 'Kandy', 'Bogambara');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (8, 8, 'Thilina Abeywickrama', '0769059595', 'Kandy', 'Peradeniya');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (9, 9, 'Chamari Senanayake', '0704235635', 'Matale', 'Madawala');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (10, 10, 'Dinesh Bandara', '0705941690', 'Matale', 'Rattota');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (11, 11, 'Nimali Ratnayake', '0725637938', 'Nuwara Eliya', 'Kalukelle');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (12, 12, 'Upul Rathnayake', '0715851767', 'Nuwara Eliya', 'Padiyapelella');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (13, 13, 'Dilani Silva', '0729307290', 'Galle', 'Galle Fort');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (14, 14, 'Mahesh Nimal', '0707240835', 'Galle', 'Hikkaduwa Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (15, 15, 'Shehani Dilhani', '0744461577', 'Matara', 'Matara North');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (16, 16, 'Roshan Perera', '0733129182', 'Matara', 'Weligama Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (17, 17, 'Harsha Jayalath', '0738180726', 'Hambantota', 'Tangalle Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (18, 18, 'Isuru Lakshan', '0704790784', 'Hambantota', 'Ambalantota');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (19, 19, 'Bimali Karunaratne', '0756997749', 'Jaffna', 'Nallur');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (20, 20, 'Kavindu Sampath', '0712823805', 'Jaffna', 'Point Pedro');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (21, 21, 'Pubudu Perera', '0753768174', 'Kilinochchi', 'Karachchi');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (22, 22, 'Nirosha Udayangani', '0753386065', 'Kilinochchi', 'Poonakary');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (23, 23, 'Asanka Jayawardena', '0703298457', 'Mannar', 'Mannar Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (24, 24, 'Lahiru Ranasinghe', '0747172671', 'Mannar', 'Pesalai');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (25, 25, 'Madushani Kumuduni', '0751892994', 'Vavuniya', 'Vavuniya Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (26, 26, 'Tharindu Gunasekara', '0746303429', 'Vavuniya', 'Nedunkeni');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (27, 27, 'Lasanthi Wickramasinghe', '0736587393', 'Mullaitivu', 'Puthukudiyiruppu');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (28, 28, 'Manjula Herath', '0703371411', 'Mullaitivu', 'Maritimepattu');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (29, 29, 'Supun Jayarathna', '0757184697', 'Batticaloa', 'Kattankudy');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (30, 30, 'Shanika Priyadarshani', '0723768148', 'Batticaloa', 'Eravur Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (31, 31, 'Chandima Gunawardena', '0716702876', 'Ampara', 'Kalmunai');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (32, 32, 'Surangi Nisansala', '0795483895', 'Ampara', 'Akkaraipattu');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (33, 33, 'Ashen Maduranga', '0745311597', 'Trincomalee', 'Trincomalee Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (34, 34, 'Yasas Abeykoon', '0705746539', 'Trincomalee', 'Kinniya');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (35, 35, 'Chathurika Senarath', '0727990468', 'Kurunegala', 'Kurunegala Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (36, 36, 'Nilantha Wickrama', '0752518997', 'Kurunegala', 'Kuliyapitiya');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (37, 37, 'Indika Sampath', '0727110705', 'Puttalam', 'Puttalam Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (38, 38, 'Hiruni Hettiarachchi', '0771344625', 'Puttalam', 'Chilaw Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (39, 39, 'Navodhani Mendis', '0766917776', 'Anuradhapura', 'Anuradhapura Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (40, 40, 'Janith Liyanage', '0788398374', 'Anuradhapura', 'Kekirawa');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (41, 41, 'Naduni Silva', '0748881276', 'Polonnaruwa', 'Polonnaruwa Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (42, 42, 'Manoj Perera', '0724414457', 'Polonnaruwa', 'Medirigiriya');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (43, 43, 'Rashmi Karunarathne', '0718939969', 'Badulla', 'Badulla Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (44, 44, 'Eranga Weerasinghe', '0719739109', 'Badulla', 'Bandarawela');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (45, 45, 'Thushara Dissanayake', '0759028848', 'Monaragala', 'Monaragala Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (46, 46, 'Dinusha Senanayaka', '0722724997', 'Monaragala', 'Wellawaya');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (47, 47, 'Kelum Rathnayake', '0729845073', 'Ratnapura', 'Ratnapura Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (48, 48, 'Thisari Jayasinghe', '0721376496', 'Ratnapura', 'Balangoda');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (49, 49, 'Kasun Rukshan', '0732648738', 'Kegalle', 'Kegalle Town');
+INSERT INTO gn_officers (gn_id, user_id, name, contact_no, district, gn_division) VALUES (50, 50, 'Kavindi Ekanayake', '0787398219', 'Kegalle', 'Mawanella');
+
+-- Insert into the user for DMC
+INSERT INTO users (user_id, password, email, role, status) VALUES
+(51, 'DMC@5831', 'lahiru.perera@dmc.gov.lk', 'DMC', 'active'),
+(52, 'DMC@9123', 'nuwani.fernando@dmc.gov.lk', 'DMC', 'active'),
+(53, 'DMC@3746', 'kavindu.jayasinghe@dmc.gov.lk', 'DMC', 'active'),
+(54, 'DMC@7264', 'tharushi.senanayake@dmc.gov.lk', 'DMC', 'active'),
+(55, 'DMC@4895', 'dilan.weerakoon@dmc.gov.lk', 'DMC', 'active');
