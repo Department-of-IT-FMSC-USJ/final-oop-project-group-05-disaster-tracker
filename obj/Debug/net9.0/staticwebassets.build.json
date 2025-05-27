@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "bQI+bgvzyLegLt2O6LUlxoR1BUPsAECSVXva95ejBvM=",
+  "Source": "DisasterManagementAPI",
+  "BasePath": "_content/DisasterManagementAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
