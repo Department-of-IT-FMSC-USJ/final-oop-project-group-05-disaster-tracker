@@ -61,3 +61,5 @@ D:\Year 3 Sem 1\SE\Disaster track app\Disaster tracker\DisasterManagementAPI\obj
 D:\Year 3 Sem 1\SE\Disaster track app\Disaster tracker\DisasterManagementAPI\obj\Debug\net9.0\DisasterManagementAPI.pdb
 D:\Year 3 Sem 1\SE\Disaster track app\Disaster tracker\DisasterManagementAPI\obj\Debug\net9.0\DisasterManagementAPI.genruntimeconfig.cache
 D:\Year 3 Sem 1\SE\Disaster track app\Disaster tracker\DisasterManagementAPI\obj\Debug\net9.0\ref\DisasterManagementAPI.dll
+D:\Year 3 Sem 1\SE\Disaster track app\Disaster tracker\DisasterManagementAPI\obj\Debug\net9.0\DisasterManagementAPI.sourcelink.json
+D:\Year 3 Sem 1\SE\Disaster track app\Disaster tracker\DisasterManagementAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
