@@ -90,3 +90,13 @@ CREATE TABLE aid_requests (
   PRIMARY KEY (aid_id),
   FOREIGN KEY (assign_gn) REFERENCES gn_officers(gn_id) ON DELETE SET NULL
 );
+
+CREATE TABLE dmc_officers (
+  dmc_id INT NOT NULL AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  contact_no VARCHAR(20) NOT NULL,
+  district VARCHAR(100) NOT NULL,
+  PRIMARY KEY (dmc_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
